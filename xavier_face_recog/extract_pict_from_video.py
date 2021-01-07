@@ -1,12 +1,12 @@
 import cv2
 import os
-video_dir='./Desktop/Boulot/JouvencIA/videos_residents'
+video_dir='/Users/xavierrobellet/Desktop/Boulot/JouvencIA/video_personnels'
 for root, dirs, files in os.walk(video_dir):
     for file in files:
         path=os.path.join(root,file)
         name=os.path.splitext(file)[0]
         try:
-            os.mkdir(video_dir + '/../photos_residents/train/' + name)
+            os.mkdir(video_dir + '/../photos_personnels/train/' + name)
         except:
             print('eh mince')
 
@@ -20,7 +20,7 @@ for root, dirs, files in os.walk(video_dir):
                 break
 
             if i%5==0:
-                cv2.imwrite(video_dir + '/../photos_residents/train/' + name + '/' + name + '_' + str(i)+'.jpg',frame)
+                cv2.imwrite(video_dir + '/../photos_personnels/train/' + name + '/' + name + '_' + str(i)+'.jpg',frame)
             
             i+=1
         
